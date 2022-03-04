@@ -1,0 +1,62 @@
+<html id="html">
+<!--Code Written by Alvin -- bollanoalvin@gmail.com-->
+<head> 
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">>
+	<title>BUS TRACKER MAIN</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-ico">
+	<link href="main.css" rel="stylesheet" type="text/css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="menus">
+		<div class="tracking"><h1>          Datalogger Currently Tracking: M-7 #1   </h1><h1 style="text-decoration: underline; cursor: pointer; color:lightgray" onclick="javascript:window.location.replace('/../selector');">Change</h1></div>tn">&#9776;</a>1
+		<div class='box menu', id="menu"></div>
+		<div class='box2'></div>
+	</div>
+
+	<div class="main">
+		<h1 style="color:rgb(73, 81, 92);">Live Location:</h1>
+		<div class="mapouter" id="map" ><div class="gmap_canvas"><iframe width="1000" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=%22Turgut%20Ozal%22%20College&t=k&z=19&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br><style>.mapouter{position:relative;text-align:right;height:500px;width:1000px;}</style><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:1000px;}</style></div></div>
+	</div>
+</body>
+</html>
+
+<script>
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		window.location.replace("/mobile");
+	}
+
+	window.onload= function(){
+		document.getElementById("menu").style.opacity = "0"
+		choosebus()
+	}
+
+
+	function CloseMenu(){
+		document.getElementById('menu').style.animationName = "closeMenu"
+		document.getElementById('menu').style.animationDuration = "0.9s"
+		setTimeout(function() { document.getElementById('menu').style.opacity = "0"}, 900);
+	} 
+
+	function OpenMenu(){
+		document.getElementById('menu').style.animationName = "openMenu"
+		document.getElementById('menu').style.animationDuration = "0.9s"
+		setTimeout(function() {	document.getElementById("menu").style.opacity = "1"}, 900);
+	}
+
+	function check(){
+		if(document.getElementById('menu').style.opacity == "0"){
+			OpenMenu()
+			setTimeout(function() { document.getElementById('menuBtn').innerHTML = "&#8592;" }, 200);
+		}
+		else {
+			CloseMenu()
+			document.getElementById('menuBtn').innerHTML = "&#9776;"
+		}
+	}
+</script>

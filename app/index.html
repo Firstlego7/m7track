@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <title>Please select the bus you'd like to track</title>
+</head>
+<body style="margin: 0px; overflow: hidden; background-image: url('color.png');">
+    <div style="z-index: 100; position: fixed;">
+        <div class="box" id="mainboxes">
+            <div class="sel">
+                <p class="track">Select M-7 Datalogger you'd like to track:</p>
+                <img onclick="javascript:hallo()" src="back.png" height="30" width="30" style="cursor: pointer;padding-left: 50px; padding-top: 30px" class="backbtn" onclick="javascript:window.location.replace('/..')">
+                <p style=" cursor: pointer; padding-top: 17px" onclick="javascript:hallo()" class="backbtn">Back</p>
+            </div>
+            <div class="box2">
+                <div class="box3">
+                    <p>M-7 Datalogger #1</p>
+                    <img src="online.png" width="15px" height="15px" style="padding-top: 15px; padding-left: 300px" >
+                    <button class="btn" onclick="javascript:window.location.replace('/../app/appsel')">Connect</button>
+                </div>
+                <!-- <div class="box3">
+                    <p>Prototype Bus2</p>
+                    <img src="oflline.png" width="15px" height="15px">
+                    <button class="btn" disabled>Connect</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <img id="BG" class="bg" src="selector.png" style="filter: blur(5px); width: 100%;">
+</body>
+<style>
+
+    html{
+        font-family: 'Noto Sans JP';
+        white-space: nowrap;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    body .bg{
+        animation: blurin 0.5s;
+        animation-duration: 0.5s;
+    }
+    .backbtn{
+        text-align: center;
+        padding-top: 10px;
+    }
+    .btn {
+    /* margin-right: 10px; */
+    border: 1px solid #ddd;
+    padding: 3px 15px 3px 15px;
+    background: #e1e0e0;
+    margin-top: 10px;
+    margin-left: 10px;
+    transition: all 0.1s ease-in;
+    border: 1px solid #707070;
+    height: 25px;
+    }
+
+    .btn:not([disabled]):hover{
+    outline: 0;
+    background: #eaf6fd;
+
+    border: 1px solid #3C7FB1;
+    box-shadow: 0 0 3px #A7D9F5;
+    -o-box-shadow: 0 0 3px #A7D9F5;
+    -webkit-box-shadow: 0 0 3px #A7D9F5;
+    -moz-box-shadow: 0 0 3px #A7D9F5;
+    }
+
+    .btn:not([disabled]):focus{
+        outline: 0;
+        background: #eaf6fd;
+
+        border: 1px solid gray;
+        border: 1px solid #3C7FB1;
+        border-style: dotted;
+        box-shadow: 0 0 3px #A7D9F5;
+        -o-box-shadow: 0 0 3px #A7D9F5;
+        -webkit-box-shadow: 0 0 3px #A7D9F5;
+        -moz-box-shadow: 0 0 3px #A7D9F5;
+    }
+
+    .btn:active {
+    background: #cfdfe8;
+    }
+
+    .sel{
+        display: flex;
+    }
+
+    .box{
+        width:610px;
+        height:300px;
+        background-color: white;
+        /* box-shadow: 0 0 1em 0 #262b2e, 0 0 1em 0 #1a1a1a; */
+        border-radius: 10px;
+        z-index: 80;
+        animation: fadein 0.9s;
+        animation-duration: 0.9s;
+    }
+
+    .box .track{
+        /* padding-top: 10px; */
+        padding-left: 25px;
+        font-size: 25px;
+        /* font-weight: bold; */
+        color:gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box2{
+        position: absolute;
+        width: 570px;
+        height: 200px;
+        background-color: rgb(243, 243, 243);
+        /* box-shadow: 0 0 0.3vw 0 #262b2e, 0 0 0.3vw 0 #1a1a1a; */
+        /* box-shadow: inset 0 0 1em 0 darkgray, 0 0 1em 0 gray; */
+        display: flex;
+        border-radius: 10px;
+        top: 25%;
+        left: 20px;
+        overflow: hidden;
+    }
+
+    .box3{
+        display:flex;
+        position: absolute;
+        width: 570px;
+        height: 40px;
+        background-color: #c1c1c1;
+        outline: white 2px solid;
+    }
+
+    .box3 p{
+        padding-left: 2vw;
+        margin-top: 1.4vh;
+        color:white;
+        font-size: 200;
+    }
+    /* .box3 img{
+        /* padding-left: 15vw; */
+        /* margin-top: 2vh;
+    } */
+
+    /* .box3 button{
+        /* margin-top: 1.4vh; */
+        /* margin-left:1vw;
+    } */
+    .box p{
+        z-index: 100;
+    }
+
+    @keyframes fadein {
+        from{ opacity: 0; }
+        to{ opacity: 100% ;}
+    }
+    @keyframes blurin {
+        from{ filter:blur(0) }
+        to{ filter:blur(5px) }
+    }
+
+    @keyframes blurout {
+        from{ filter:blur(5px); }
+        to{ filter:blur(0); }
+    }
+    
+    @keyframes fadeout {
+        from{ opacity: 100%; }
+        to{ opacity: 0; }
+    }
+</style>
+
+<script>
+    function hallo(){
+        document.getElementById('mainboxes').style.animationName = "fadeout"
+        document.getElementById('BG').style.animationName = "blurout"
+
+        document.getElementById('mainboxes').style.opacity = "0"
+        document.getElementById('BG').style.filter = "blur(0)"
+
+        setTimeout(function(){window.location.replace('/..')}, 400)
+    }
+</script>
+</html>

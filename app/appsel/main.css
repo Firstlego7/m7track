@@ -1,0 +1,117 @@
+/* Code written by Alvin */
+
+::-webkit-scrollbar {
+  width: slim;
+  height: 1em;
+}
+
+  ::-webkit-scrollbar-track {
+  background:rgb(73, 81, 92);
+}
+
+  ::-webkit-scrollbar-thumb {
+  background: white;
+  border: 0.25em solid rgb(73, 81, 92);
+  border-radius: 100vw;
+}
+
+  ::-webkit-scrollbar-thumb:hover {
+  background: lightgray
+}
+
+html{
+  background-color: lightgrey;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.box {
+  float: right;
+  height: 2000px; 
+  width: 250px;
+  margin-bottom: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  clear: both;
+  z-index: 2;
+  border-right: 5px solid white
+}
+
+.box2{
+  position: fixed;
+  left:0;
+  top:0;
+  height: 55px;
+  width: 1519px;
+  background-color: rgb(73, 81, 92);
+  z-index: 1;
+  border-bottom: 5px solid rgb(255, 255, 255);
+}
+
+.menu {
+  background-color: rgb(77, 84, 97);
+  animation-name: none;
+  animation-duration: 0;
+}
+
+.tracking{
+  padding-bottom: 25px;
+  /* position: absolute; */
+  font-size: 0.65em;
+  color: white;
+  position:fixed;
+  display: flex;
+  z-index: 5;
+}
+
+
+
+@keyframes openMenu{
+  0% {left: -250px}
+  100% {left: 0px; opacity: 1;}
+}
+
+@keyframes closeMenu{
+  0% {left: 0px;}
+  100%{left: -250px; opacity: 0;}
+}
+
+
+:root {
+  --clr-neon: rgb(255, 255, 255);
+}
+
+
+.main{
+  color: black;
+  font-family: "Noto Sans JP";
+  padding-top: 120px;
+  /* padding-right: 90px; */
+  padding-left: 125px;
+}
+
+.menus {
+  min-height: 0vh;
+  display: grid;
+  place-items: center;
+  background: var(--clr-bg);
+  font-family: "Noto Sans JP", cursive;
+  color: var(--clr-neon);
+}
+
+.neon-button {
+  font-size: 1em;
+
+  display: flex;
+  position: fixed;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-neon);
+  border: var(--clr-neon) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  z-index: 5;
+  top: 10px;
+  left: 5.2;
+}
